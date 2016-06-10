@@ -32,3 +32,5 @@ augroup whitespace
 augroup END
 
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+set shell=/bin/bash

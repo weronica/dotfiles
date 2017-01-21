@@ -8,7 +8,7 @@
   $ cd $HOME
   $ git clone git@github.com:weronica/dotfiles.git
   $ mv dotfiles .dotfiles
-  $ cd dotfiles
+  $ cd .dotfiles
   ```
 
 2. Create symlinks.

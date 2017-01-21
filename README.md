@@ -17,6 +17,6 @@
   $ make
   ```
 
-# Cleanup
+## Cleanup
 
 To remove all symlinks, run `make clean`.

@@ -1,0 +1,13 @@
+[core]
+  excludesfile = ~/.dotfiles/git/ignore
+  editor = vim
+
+[diff]
+  algorithm = patience
+
+[push]
+  default = simple
+
+[user]
+  email = hello@veronicawharton.com
+  name = Veronica Wharton

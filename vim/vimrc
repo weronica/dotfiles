@@ -1,0 +1,92 @@
+set shell=/bin/bash
+
+call plug#begin('~/.vim/plugged')
+
+" syntastic requires jshint
+function! Installjshint(info)
+  if a:info.status == 'installed' || a:info.force
+    !npm install -g jshint
+  endif
+endfunction
+Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
+
+call plug#end()
+
+syntax enable		" enable syntax processing
+set tabstop=4       	" number of visual spaces per TAB
+set softtabstop=4   	" number of spaces in tab when editing
+set expandtab       	" tabs are spaces
+set number              " show line numbers
+set wildmenu            " visual autocomplete for command menu
+set showmatch           " highlight matching [{()}]
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" jk is escape
+inoremap jk <esc>
+
+"   Tab characters
+set tabstop=2                            " Visual spaces per tab char
+set softtabstop=2                        " Insert 2 spaces on <TAB>
+set expandtab                            " Use spaces, not tabs
+set shiftwidth=2                         " Indent 2 spaces
+set shiftround                           " Indent to nearest multiple of 2
+set autoindent                           " Automatically indent things
+
+colorscheme colorsbox-stblue
+
+"   Delete trailing whitespace
+fun! <SID>StripTrailingWhitespace()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
+augroup whitespace
+  autocmd!
+  autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
+augroup END
+
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" ## added by OPAM user-setup for vim / base ## 9a3a300d80f2faeb258825d3e0c1947c ## you can edit, but keep this line
+let s:opam_share_dir = system("opam config var share")
+let s:opam_share_dir = substitute(system('opam config var share'),'\n$','','''')
+
+let s:opam_configuration = {}
+
+function! OpamConfOcpIndent()
+  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
+endfunction
+let s:opam_configuration['ocp-indent'] = function("OpamConfOcpIndent")
+
+function! OpamConfOcpIndex()
+  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
+endfunction
+let s:opam_configuration['ocp-index'] = function("OpamConfOcpIndex")
+
+function! OpamConfMerlin()
+  execute "set rtp+=" . s:opam_share_dir . "/merlin/vim"
+endfunction
+let s:opam_configuration["merlin"] = function("OpamConfMerlin")
+
+let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
+let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
+let s:opam_available_tools = systemlist(join(s:opam_check_cmdline, ' '))
+for tool in s:opam_packages
+  " Respect package order (merlin should be after ocp-index)
+  if count(s:opam_available_tools, tool) > 0
+    call s:opam_configuration[tool]()
+  endif
+endfor
+let g:syntastic_ocaml_checkers = ['merlin']
+" ## end of OPAM user-setup addition for vim / base ## keep this line
+
+" ## added by OPAM user-setup for vim / ocp-indent ## 802074fb94b9037e07aceb88b061df42 ## you can edit, but keep this line
+" if count(s:opam_available_tools,"ocp-indent") == 0
+"  source "/Users/veronicawharton/.opam/system/share/vim/syntax/ocp-indent.vim"
+" endif
+" ## end of OPAM user-setup addition for vim / ocp-indent ## keep this line

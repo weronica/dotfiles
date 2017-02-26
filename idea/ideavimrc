@@ -1,0 +1,6 @@
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" jk is escape
+inoremap jk <esc>

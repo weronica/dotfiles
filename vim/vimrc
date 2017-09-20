@@ -1,16 +1,20 @@
 set shell=/bin/bash
 
-call plug#begin('~/.vim/plugged')
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" syntastic requires jshint
-function! Installjshint(info)
-  if a:info.status == 'installed' || a:info.force
-    !npm install -g jshint
-  endif
-endfunction
-Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-call plug#end()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'flazz/vim-colorschemes'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 syntax enable		" enable syntax processing
 set tabstop=4       	" number of visual spaces per TAB

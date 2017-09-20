@@ -11,7 +11,15 @@
   $ cd .dotfiles
   ```
 
-2. Create symlinks.
+2. [Install oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+
+3. [Install zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
+
+4. [Install vundle](https://github.com/VundleVim/Vundle.vim).
+
+5. Run `:PluginInstall` to install vim plugins.
+
+6. Create symlinks.
 
   ```sh
   $ make

@@ -4,9 +4,11 @@ all:
 	mkdir -p ~/.git
 	ln -s $$HOME/.dotfiles/git/config ~/.git/config
 	ln -s $$HOME/.dotfiles/idea/ideavimrc ~/.ideavimrc
+	ln -s $$HOME/.dotfiles/zsh/fishier.zsh-theme ~/.oh-my-zsh/themes/
 
 clean:
 	rm -f ~/.vimrc
 	rm -f ~/.zshrc
 	rm -f ~/.git/config
 	rm -f ~/.ideavimrc
+	rm -f ~/.oh-my-zsh/themes/fishier.zsh-theme

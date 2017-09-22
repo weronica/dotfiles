@@ -10,7 +10,7 @@ _fishy_collapsed_wd() {
 }
 
 local user_color='green'; [ $UID -eq 0 ] && user_color='red'
-PROMPT='[%5>>%n%>>@%5>>%m%>>] %{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
+PROMPT='[%3>>%n%>>@%3>>%m%>>] %{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 
 local return_status="%{$fg_bold[red]%}%(?..%?)%{$reset_color%}"

@@ -13,9 +13,9 @@
 
 2. [Install oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
-3. [Install zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
+3. [Install vundle](https://github.com/VundleVim/Vundle.vim).
 
-4. [Install vundle](https://github.com/VundleVim/Vundle.vim).
+4. [Install zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
 
 5. Run `:PluginInstall` to install vim plugins.
 

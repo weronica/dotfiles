@@ -9,8 +9,19 @@ _fishy_collapsed_wd() {
 ')
 }
 
+if [ -z ${MY_NAME+x} ]; then
+  my_name="%3>>%n%>>";
+else
+  my_name=$MY_NAME;
+fi
+if [ -z ${COMPUTER_NAME+x} ]; then
+  computer_name="%3>>%m%>>";
+else
+  computer_name=$COMPUTER_NAME;
+fi
+
 local user_color='green'; [ $UID -eq 0 ] && user_color='red'
-PROMPT='[%3>>%n%>>@%3>>%m%>>] %{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
+PROMPT='[$my_name@$computer_name] %{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 
 local return_status="%{$fg_bold[red]%}%(?..%?)%{$reset_color%}"

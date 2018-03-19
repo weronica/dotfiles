@@ -16,13 +16,14 @@ Plugin 'flazz/vim-colorschemes'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-syntax enable		" enable syntax processing
-set tabstop=4       	" number of visual spaces per TAB
-set softtabstop=4   	" number of spaces in tab when editing
-set expandtab       	" tabs are spaces
+syntax enable		        " enable syntax processing
+set tabstop=4       	  " number of visual spaces per TAB
+set softtabstop=4   	  " number of spaces in tab when editing
+set expandtab       	  " tabs are spaces
 set number              " show line numbers
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
+set autoindent          " automatically indent things
 
 " move vertically by visual line
 nnoremap j gj
@@ -31,13 +32,7 @@ nnoremap k gk
 " jk is escape
 inoremap jk <esc>
 
-"   Tab characters
-set tabstop=2                            " Visual spaces per tab char
-set softtabstop=2                        " Insert 2 spaces on <TAB>
-set expandtab                            " Use spaces, not tabs
-set shiftwidth=2                         " Indent 2 spaces
-set shiftround                           " Indent to nearest multiple of 2
-set autoindent                           " Automatically indent things
+set textwidth=120
 
 colorscheme colorsbox-stblue
 

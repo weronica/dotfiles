@@ -1,12 +1,12 @@
+# Shell configuration.
+# export MY_NAME=v
+# export COMPUTER_NAME=local
+
 # oh-my-zsh config.
-export ZSH=/Users/$USER/.oh-my-zsh
 plugins=(git zsh-autosuggestions)
 ZSH_THEME="fishier"
+export ZSH=/Users/$USER/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# Shell configuration.
-export MY_NAME=v
-export COMPUTER_NAME=local
-
-# enable direnv.
+# Enable direnv.
 eval "$(direnv hook zsh)"

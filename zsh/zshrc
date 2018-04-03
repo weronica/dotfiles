@@ -1,17 +1,14 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# oh-my-zsh config.
 export ZSH=/Users/$USER/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
-# added by Anaconda2 4.4.0 installer
-export PATH="/anaconda/bin:$PATH"
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="fishier"
 
 plugins=(git zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+# Shell configuration.
+# export MY_NAME=v
+# export COMPUTER_NAME=local
+
+# enable direnv.
+eval "$(direnv hook zsh)"

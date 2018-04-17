@@ -5,8 +5,12 @@
 # oh-my-zsh config.
 plugins=(git zsh-autosuggestions)
 ZSH_THEME="fishier"
-export ZSH=/Users/$USER/.oh-my-zsh
+export ZSH=/home/$USER/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Configure go.
+# export GOPATH="$HOME/code/go"
+# export PATH="$PATH:$GOPATH/bin"
+
 # Enable direnv.
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"

@@ -17,14 +17,16 @@
 
 4. [Install zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
 
-5. Create (fresh) symlinks.
+5. [Install tmux-themepack](https://github.com/jimeh/tmux-themepack).
+
+6. Create (fresh) symlinks.
 
   ```sh
   $ make clean
   $ make
   ```
 
-6. Run `:PluginInstall` to install vim plugins.
+7. Run `:PluginInstall` to install vim plugins.
 
 ### Optional
 

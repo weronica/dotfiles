@@ -1,3 +1,5 @@
+.PHONY: tmux
+
 all: clean
 	ln -s $$HOME/.dotfiles/vim/vimrc ~/.vimrc
 	ln -s $$HOME/.dotfiles/zsh/zshrc ~/.zshrc

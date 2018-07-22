@@ -1,10 +1,10 @@
 set shell=/bin/bash
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible      " Be iMproved, required.
+filetype off          " Required.
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" Set the runtime path to include vundle and initialize.
+set rtp+=~/.vim/bundle/vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -13,30 +13,30 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()            " Required.
+filetype plugin indent on    " Required.
 
-syntax enable		        " enable syntax processing
-set tabstop=4       	  " number of visual spaces per TAB
-set softtabstop=4   	  " number of spaces in tab when editing
-set expandtab       	  " tabs are spaces
-set number              " show line numbers
-set wildmenu            " visual autocomplete for command menu
-set showmatch           " highlight matching [{()}]
-set autoindent          " automatically indent things
+syntax enable		        " Enable syntax processing.
+set tabstop=4       	  " Number of visual spaces per TAB.
+set softtabstop=4   	  " Number of spaces in tab when editing.
+set expandtab       	  " Tabs are spaces.
+set number              " Show line numbers.
+set wildmenu            " Visual autocomplete for command menu.
+set showmatch           " Highlight matching [{()}].
+set autoindent          " Automatically indent things.
 
-" move vertically by visual line
+" Move vertically by visual line.
 nnoremap j gj
 nnoremap k gk
 
-" jk is escape
+" jk is escape.
 inoremap jk <esc>
 
 set textwidth=120
 
 colorscheme colorsbox-stblue
 
-"   Delete trailing whitespace
+" Delete trailing whitespace.
 fun! <SID>StripTrailingWhitespace()
   let l = line(".")
   let c = col(".")

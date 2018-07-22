@@ -1,11 +1,12 @@
 # Shell configuration.
-# export MY_NAME=v
-# export COMPUTER_NAME=local
+if [ -f "zsh-env-config" ]; then
+    source zsh-env-config
+fi
 
 # oh-my-zsh config.
 plugins=(git zsh-autosuggestions)
 ZSH_THEME="fishier"
-export ZSH=/home/$USER/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Configure go.

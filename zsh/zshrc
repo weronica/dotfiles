@@ -1,6 +1,6 @@
 # Shell configuration.
-if [ -f "zsh-env-config" ]; then
-    source zsh-env-config
+if [ -f "$HOME/.zsh-env-config" ]; then
+    source $HOME/.zsh-env-config
 fi
 
 # oh-my-zsh config.

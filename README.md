@@ -3,7 +3,7 @@
 ## Setup
 
 ```sh
-    $ ./install.sh
+$ ./install.sh
 ```
 ### Optional
 

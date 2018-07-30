@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ "$SHELL" = "/bin/bash" ]; then
+  sudo chsh -s /bin/zsh $USER;
+fi

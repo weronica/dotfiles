@@ -68,11 +68,11 @@ fi
 
 # Make fresh symlinks.
 print_message "Making symlinks..."
-make clean
 make
 if [ $machine != $MAC ];
 then
     make tmux
+    make bash
 fi
 
 print_message "You're all set!"

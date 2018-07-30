@@ -54,18 +54,25 @@ else
 fi
 
 # Install tmux-themepack.
-print_message "Installing tmux-themepack..."
-dir=$HOME/.tmux-themepack
-if [ ! -d $dir ];
+if [ $machine != $MAC ];
 then
-    git clone https://github.com/jimeh/tmux-themepack.git $dir
-else
-    print_message "tmux-themepack already installed."
+    print_message "Installing tmux-themepack..."
+    dir=$HOME/.tmux-themepack
+    if [ ! -d $dir ];
+    then
+        git clone https://github.com/jimeh/tmux-themepack.git $dir
+    else
+        print_message "tmux-themepack already installed."
+    fi
 fi
 
 # Make fresh symlinks.
 print_message "Making symlinks..."
 make clean
 make
+if [ $machine != $MAC ];
+then
+    make tmux
+fi
 
 print_message "You're all set!"

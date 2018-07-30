@@ -58,9 +58,9 @@ print_message "Installing tmux-themepack..."
 dir=$HOME/.tmux-themepack
 if [ ! -d $dir ];
 then
-git clone https://github.com/jimeh/tmux-themepack.git $dir
+    git clone https://github.com/jimeh/tmux-themepack.git $dir
 else
-print_message "tmux-themepack already installed."
+    print_message "tmux-themepack already installed."
 fi
 
 # Make fresh symlinks.

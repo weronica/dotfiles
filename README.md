@@ -2,9 +2,19 @@
 
 ## Setup
 
-```sh
-$ ./install.sh
-```
+1. Clone the repo.
+
+    ```sh
+    $ cd $HOME
+    $ git clone https://github.com/weronica/dotfiles.git
+    $ mv dotfiles .dotfiles
+    $ cd .dotfiles
+    ```
+2. Install all the things.
+    ```sh
+    $ ./install.sh
+    ```
+
 ### Optional
 
 - [Install go](https://www.ardanlabs.com/blog/2016/05/installing-go-and-your-workspace.html).

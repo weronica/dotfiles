@@ -7,30 +7,34 @@ filetype off                 " Required.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required.
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'flazz/vim-colorschemes'
 
-" All of your Plugins must be added before the following line
+" All of your Plugins must be added before the following line.
 call vundle#end()            " Required.
 filetype plugin indent on    " Required.
 
-syntax enable		         " Enable syntax processing.
-set tabstop=4       	     " Number of visual spaces per TAB.
-set softtabstop=4   	     " Number of spaces in tab when editing.
-set expandtab       	     " Tabs are spaces.
+syntax enable                " Enable syntax processing.
+set tabstop=4                " Number of visual spaces per TAB.
+set softtabstop=4            " Number of spaces in tab when editing.
+set expandtab                " Tabs are spaces.
 set number                   " Show line numbers.
 set wildmenu                 " Visual autocomplete for command menu.
 set showmatch                " Highlight matching [{()}].
 set autoindent               " Automatically indent things.
 
 " Move vertically by visual line.
-nnoremap j gj
-nnoremap k gk
+nmap j gj
+nmap k gk
 
 " jk is escape.
-inoremap jk <esc>
+imap jk <esc>
+
+" Manipulate TSV files.
+nmap dfc :%s/^[^\t]*\t//<Return>    " Delete first column of TSV.
+nmap dsc :%s/\t[^\t]*//<Return>     " Delete second column of TSV.
 
 set textwidth=120
 
@@ -49,4 +53,4 @@ augroup whitespace
   autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
 augroup END
 
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nmap <leader>sv :source $MYVIMRC<CR>

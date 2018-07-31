@@ -68,7 +68,11 @@ fi
 
 # Make fresh symlinks.
 print_message "Making symlinks..."
-make
+make vim
+make git
+make zsh
+make oh-my-zsh
+make idea
 if [ $machine != $MAC ];
 then
     make tmux

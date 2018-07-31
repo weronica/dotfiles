@@ -32,9 +32,10 @@ nmap k gk
 " jk is escape.
 imap jk <esc>
 
-" Manipulate TSV files.
-nmap dfc :%s/^[^\t]*\t//<Return>    " Delete first column of TSV.
-nmap dsc :%s/\t[^\t]*//<Return>     " Delete second column of TSV.
+" Delete first column of TSV.
+nmap dc1 :%s/^[^\t]*\t//<Return>
+" Delete second column of TSV.
+nmap dc2 :%s/\t[^\t]*//<Return>
 
 set textwidth=120
 

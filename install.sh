@@ -66,6 +66,45 @@ then
     fi
 fi
 
+# Install go.
+if [ $machine = $MAC ];
+then
+    print_message "TODO: go installation on mac."
+elif [ $machine = $LINUX ];
+    GOROOT=$HOME/go
+    if [ -d $GOROOT ];
+    then
+        print_message "go already installed."
+    else
+        wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
+        tar -C $HOME -xzf go1.10.3.linux-amd64.tar.gz
+        export PATH="$PATH:$GOROOT/bin"
+
+        # Make go workspace.
+        mkdir -p $HOME/code/go/src
+        export GOPATH="$HOME/code/go"    # Also in zshrc.
+        export PATH="$PATH:$GOPATH/bin"  # Also in zshrc.
+        go get -u github.com/golang/lint/golint
+    fi
+fi
+
+# Install direnv.
+if [ $machine = $MAC ];
+then
+    print_message "TODO: direnv installation on mac."
+elif [ $machine = $LINUX ];
+    direnv_dir=$HOME/.direnv
+    if [ -d $direnv_dir ];
+    then
+        print_message "direnv already installed."
+    else
+        git clone git@github.com:direnv/direnv.git $direnv_dir
+        cd $direnv_dir
+        make
+        make install
+    fi
+fi
+
 # Make fresh symlinks.
 print_message "Making symlinks..."
 make vim

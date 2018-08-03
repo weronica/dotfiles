@@ -10,8 +10,8 @@ export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Configure go.
-# export GOPATH="$HOME/code/go"
-# export PATH="$PATH:$GOPATH/bin"
+export GOPATH="$HOME/code/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # Configure anaconda.
 # export PATH="$HOME/anaconda2/bin:$PATH"

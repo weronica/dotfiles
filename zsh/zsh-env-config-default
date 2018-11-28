@@ -1,0 +1,3 @@
+# Creates zsh prompt: [my_name@computer_name] (imo: short 'n' sweet is better)
+# MY_NAME=my_name
+# COMPUTER_NAME=computer_name

@@ -47,6 +47,8 @@ clean-zsh:
 
 zsh: clean-zsh
 	ln -s $$HOME/.dotfiles/zsh/zshrc $$HOME/.zshrc
-	touch $$HOME/.dotfiles/zsh/zsh-env-config
+	if [ ! -f $$HOME/.dotfiles/zsh/zsh-env-config ]; then \
+	    cp $$HOME/.dotfiles/zsh/zsh-env-config-default $$HOME/.dotfiles/zsh/zsh-env-config; \
+	fi
 	ln -s $$HOME/.dotfiles/zsh/zsh-env-config $$HOME/.zsh-env-config
 

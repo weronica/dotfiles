@@ -38,7 +38,7 @@ tmux: clean-tmux
 clean-vim:
 	rm -f $$HOME/.vimrc
 
-vim:
+vim: clean-vim
 	ln -s $$HOME/.dotfiles/vim/vimrc $$HOME/.vimrc
 
 clean-zsh:

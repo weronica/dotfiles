@@ -10,7 +10,9 @@ call vundle#begin()
 " Let Vundle manage Vundle, required.
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'  " Make vim look nice.
+Plugin 'tomtom/tcomment_vim'     " Easy commenting.
+Plugin 'tpope/vim-surround'      " Change surroundings. ((, [, {, etc.)
 
 " All of your Plugins must be added before the following line.
 call vundle#end()            " Required.

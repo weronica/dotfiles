@@ -1,4 +1,5 @@
 #!/bin/bash
-if [ "$SHELL" = "/bin/bash" ]; then
-  sudo chsh -s /bin/zsh $USER;
-fi
+# Uncomment if I have sudo access on this machine.
+# if [ "$SHELL" = "/bin/bash" ]; then
+#   sudo chsh -s /bin/zsh $USER;
+# fi

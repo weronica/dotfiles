@@ -1,2 +1,5 @@
 # env config files
 zsh-env-config
+
+# virtualenv
+.virt

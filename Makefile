@@ -1,8 +1,11 @@
+VIRTUALENV=.virt
+PYTHON=${VIRTUALENV}/bin/python
+
 .PHONY: bash git idea oh-my-zsh tmux vim zsh
 
 all: vim git zsh oh-my-zsh idea
 
-clean: clean-vim clean-git clean-idea clean-oh-my-zsh clean-tmux clean-vim clean-zsh
+clean: clean-vim clean-git clean-zsh clean-oh-my-zsh clean-idea clean-tmux
 
 clean-bash:
 	rm -f $$HOME/.bash_profile
@@ -51,4 +54,28 @@ zsh: clean-zsh
 	    cp $$HOME/.dotfiles/zsh/zsh-env-config-default $$HOME/.dotfiles/zsh/zsh-env-config; \
 	fi
 	ln -s $$HOME/.dotfiles/zsh/zsh-env-config $$HOME/.zsh-env-config
+
+clean-ipython:
+	rm -f $$HOME/.ipython/profile_default/ipython_config.py
+	rm -f $$HOME/.ipython/profile_default/ipython_kernel_config.py
+	# rm -f $$HOME/.ipython/profile_default/startup/typecheck.py
+
+ipython: clean-ipython
+	mkdir -p $$HOME/.ipython/profile_default/startup
+	ln -s $$HOME/.dotfiles/ipython/ipython_config.py $$HOME/.ipython/profile_default/ipython_config.py
+	ln -s $$HOME/.dotfiles/ipython/ipython_kernel_config.py $$HOME/.ipython/profile_default/ipython_kernel_config.py
+	# ln -s $$HOME/.dotfiles/ipython/startup/typecheck.py $$HOME/.ipython/profile_default/startup/typecheck.py
+
+${VIRTUALENV}:
+	virtualenv -p python3.7 $@
+	${PYTHON} -m pip install -r requirements.txt
+
+requirements.txt:
+	pip freeze > requirements.txt
+
+fmt:
+	${PYTHON} -m yapf -i -r ipython/
+
+lint:
+	${PYTHON} -m flake8 ipython/*
 

@@ -38,6 +38,8 @@ imap jk <esc>
 nmap dc1 :%s/^[^\t]*\t//<Return>
 " Delete second column of TSV.
 nmap dc2 :%s/\t[^\t]*//<Return>
+" Use Tidy to format HTML.
+command Thtml :%!tidy -q -i --show-errors 0 -w 120
 
 set textwidth=120
 

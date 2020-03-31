@@ -6,7 +6,7 @@
 
     ```sh
     $ cd $HOME
-    $ git clone https://github.com/weronica/dotfiles.git
+    $ git clone https://github.com/skylerwharton/dotfiles.git
     $ mv dotfiles .dotfiles
     $ cd .dotfiles
     ```
